@@ -23,6 +23,7 @@ public class FireBall : SpellBase {
 //	private float maxSize;
 
 
+
 //	private float sizeGrowRate;
 //	private float particleSizeGrowRate;
 //	private float particleRadiusGrowRate;
@@ -78,6 +79,7 @@ public class FireBall : SpellBase {
 				z += scaleGrowRateBeforeRelease.z * deltaTime;
 
 			transform.localScale = new Vector3 (x, y, z);
+			syncScale = transform.localScale;
 
 			Debug.Log (transform.localScale);
 
@@ -107,6 +109,7 @@ public class FireBall : SpellBase {
 	}
 
 	 protected void Update () {
+		base.Update ();
 
 		if (IsReleased)
 			Grow (Time.deltaTime);

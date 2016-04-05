@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class SpellBase : MonoBehaviour, IGrowable {
+public class SpellBase : NetworkBehaviour, IGrowable {
 
+	[SyncVar]
+	protected Vector3 syncScale;
 
 	protected bool IsReleased = false;
 
@@ -19,9 +22,10 @@ public class SpellBase : MonoBehaviour, IGrowable {
 	}
 		
 	// Update is called once per frame
+	[ClientCallback]
 	public void Update () {
-
-
+		//Debug.Log ("Updating Scale");
+		transform.localScale = syncScale;
 	}
 		
 	public void Release(Vector3 dir){
