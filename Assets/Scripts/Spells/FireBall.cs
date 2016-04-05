@@ -96,6 +96,7 @@ public class FireBall : SpellBase {
 		maxScaleBeforeRelease = Vector3.Scale (transform.localScale, maxScale);
 		scaleGrowRateBeforeRelease = Vector3.Scale(transform.localScale, scaleGrowRate);
 		GetComponent<Rigidbody> ().velocity = this.transform.forward * Speed;
+		syncVelocity = this.transform.forward * Speed;
 
 //		maxParticleSize = particles.startSize * maxGrowRatioAfterRelease;
 //		maxParticleRadius = particles.startSpeed * maxGrowRatioAfterRelease;
