@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxChargeTimeInSeconds: 3
-  Speed: 5
+  Speed: 10
   scaleGrowRate: {x: 5, y: 5, z: 5}
   maxScale: {x: 100, y: 100, z: 100}
   Noise: {x: 0, y: 0, z: 0}
@@ -4718,6 +4718,34 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scaleGrowRate.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scaleGrowRate.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scaleGrowRate.z
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
