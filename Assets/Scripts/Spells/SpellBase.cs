@@ -7,6 +7,9 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 	[SyncVar]
 	protected Vector3 syncScale;
 
+	[SyncVar]
+	protected Vector3 syncVelocity;
+
 	protected bool IsReleased = false;
 
 	public float maxChargeTimeInSeconds = 3;
@@ -26,6 +29,7 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 	public void Update () {
 		//Debug.Log ("Updating Scale");
 		transform.localScale = syncScale;
+		if(GetComponent<Rigidbody> ()) GetComponent<Rigidbody> ().velocity = syncVelocity;
 	}
 		
 	public void Release(Vector3 dir){
