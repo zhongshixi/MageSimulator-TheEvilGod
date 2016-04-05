@@ -95,6 +95,7 @@ public class FireBall : SpellBase {
 
 		maxScaleBeforeRelease = Vector3.Scale (transform.localScale, maxScale);
 		scaleGrowRateBeforeRelease = Vector3.Scale(transform.localScale, scaleGrowRate);
+		GetComponent<Rigidbody> ().velocity = this.transform.forward * Speed;
 
 //		maxParticleSize = particles.startSize * maxGrowRatioAfterRelease;
 //		maxParticleRadius = particles.startSpeed * maxGrowRatioAfterRelease;
@@ -111,15 +112,17 @@ public class FireBall : SpellBase {
 	 protected void Update () {
 		base.Update ();
 
-		if (IsReleased)
+		if (IsReleased) {
 			Grow (Time.deltaTime);
+
+		}
 	}
 
 	void LateUpdate ()
 	{	
 		if (IsReleased) {
 			//this.transform.rotation = Quaternion.Lerp (this.transform.rotation, direction, Damping);
-			this.transform.position += this.transform.forward * Speed * Time.deltaTime;
+			//this.transform.position += this.transform.forward * Speed * Time.deltaTime;
 		}
 	}
 		
