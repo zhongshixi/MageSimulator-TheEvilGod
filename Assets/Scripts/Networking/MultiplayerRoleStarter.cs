@@ -18,9 +18,12 @@ public class MultiplayerRoleStarter : NetworkManager {
 	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
 		if (numPlayers == 0) {
 			//assign God Character
-			Vector3 godStartPos = GameObject.Find("GodStart").transform.position;
+			GameObject godStart = GameObject.Find("GodStart");
+			Vector3 godStartPos = godStart.transform.position;
+			Vector3 godStartRot = godStart.transform.eulerAngles;
 			GameObject player = (GameObject)Instantiate (GodCharacter);
 			player.transform.position = godStartPos;
+			player.transform.eulerAngles = godStartRot;
 			NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
 		} else {
 			//assign Man Character

@@ -14,7 +14,7 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 
 	public float maxChargeTimeInSeconds = 3;
 
-	public float Speed = 5;
+	public float Speed;
 
 	public Vector3 scaleGrowRate = new Vector3 (5.0f, 5.0f, 5.0f);
 	public Vector3 maxScale = new Vector3 (100.0f,100.0f,100.0f);
