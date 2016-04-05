@@ -10,6 +10,9 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 	[SyncVar]
 	protected Vector3 syncVelocity;
 
+	[SyncVar]
+	protected Vector3 syncDirection;
+
 	protected bool IsReleased = false;
 
 	public float maxChargeTimeInSeconds = 3;
@@ -30,6 +33,12 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 		//Debug.Log ("Updating Scale");
 		transform.localScale = syncScale;
 		if(GetComponent<Rigidbody> ()) GetComponent<Rigidbody> ().velocity = syncVelocity;
+		transform.forward = syncDirection;
+	}
+
+	[ServerCallback]
+	protected void FixedUpdate(){
+		syncDirection = transform.forward;
 	}
 		
 	public void Release(Vector3 dir){
