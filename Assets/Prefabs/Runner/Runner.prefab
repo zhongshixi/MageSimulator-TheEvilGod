@@ -2929,7 +2929,7 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   landClip: {fileID: 0}
   movementSpeed: 15
-  jumpStrength: 350
+  jumpStrength: 500
   footstepCooldown: 0.35
   bobHeight: 0.15
 --- !u!114 &11499984
@@ -3264,6 +3264,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: runningThreshold
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpStrength
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

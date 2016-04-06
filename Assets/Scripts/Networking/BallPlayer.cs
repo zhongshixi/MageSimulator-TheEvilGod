@@ -25,6 +25,8 @@ public class BallPlayer : NetworkBehaviour {
 	public float footstepCooldown;
 	public float bobHeight;
 	private float initialCameraHeight;
+	private float spaceBarTimer = 0.0f;
+	private float spaceBarCooldown = 0.25f;
 	// Use this for initialization
 	void Start () {
 		if (!isLocalPlayer)
@@ -46,7 +48,7 @@ public class BallPlayer : NetworkBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (!isLocalPlayer)
 			return;
 
@@ -80,9 +82,13 @@ public class BallPlayer : NetworkBehaviour {
 			CmdMove (RunDirection.backward);
 		}
 
-		if (Input.GetKey (KeyCode.Space)) {
+		if (Input.GetKey (KeyCode.Space) && spaceBarTimer<=0) {
 			CmdMove (RunDirection.jump);
+			spaceBarTimer = spaceBarCooldown;
 		}
+
+		if (spaceBarTimer > 0)
+			spaceBarTimer -= Time.deltaTime;
 	}
 
 
