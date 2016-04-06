@@ -30,22 +30,9 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 		
 
 	public void Update () {
-		//Debug.Log ("Updating Scale");
-		NetworkIdentity identity  = GetComponent<NetworkIdentity>();
-		if (identity) {
-
-			if (identity.isClient) {
-				Debug.Log ("Client");
-				transform.localScale = syncScale;
-				if (GetComponent<Rigidbody> ())
-					GetComponent<Rigidbody> ().velocity = syncVelocity;
-				transform.forward = syncDirection;
-
-			} else {
-
-				syncDirection = transform.forward;
-			}
-		}
+		transform.localScale = syncScale;
+		if (GetComponent<Rigidbody> ())
+			GetComponent<Rigidbody> ().velocity = syncVelocity;
 	}
 
 		
