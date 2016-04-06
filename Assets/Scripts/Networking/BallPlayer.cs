@@ -33,12 +33,12 @@ public class BallPlayer : NetworkBehaviour {
 		GameObject.Find ("Main Camera").SetActive (false);
 		SkinnedMeshRenderer[] skinnedModel = GetComponentsInChildren<SkinnedMeshRenderer> ();
 		foreach (SkinnedMeshRenderer r in skinnedModel) {
-			//r.enabled = false;
+			r.enabled = false;
 		}
 
 		MeshRenderer[] meshedModel = GetComponentsInChildren<MeshRenderer> ();
 		foreach (MeshRenderer r in meshedModel) {
-			//r.enabled = false;
+			r.enabled = false;
 		}
 		playerCamera.enabled = true;
 		GetComponent<AudioListener> ().enabled = true;
