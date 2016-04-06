@@ -16,7 +16,7 @@ public class MultiplayerRoleStarter : NetworkManager {
 
 
 	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
-		if (false && numPlayers == 0) {
+		if (numPlayers == 0) {
 			//assign God Character
 			GameObject godStart = GameObject.Find("GodStart");
 			Vector3 godStartPos = godStart.transform.position;
