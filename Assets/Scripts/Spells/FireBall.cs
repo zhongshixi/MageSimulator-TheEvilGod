@@ -118,6 +118,10 @@ public class FireBall : SpellBase {
 
 		}
 	}
+		
+	protected void FixedUpdate(){
+		syncDirection = transform.forward;
+	}
 
 	void LateUpdate ()
 	{	
