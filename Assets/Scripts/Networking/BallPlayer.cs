@@ -24,14 +24,25 @@ public class BallPlayer : NetworkBehaviour {
 	private float footstepTimer = 0.0f;
 	public float footstepCooldown;
 	public float bobHeight;
+	private float initialCameraHeight;
 	// Use this for initialization
 	void Start () {
 		if (!isLocalPlayer)
 			return;
 
 		GameObject.Find ("Main Camera").SetActive (false);
+		SkinnedMeshRenderer[] skinnedModel = GetComponentsInChildren<SkinnedMeshRenderer> ();
+		foreach (SkinnedMeshRenderer r in skinnedModel) {
+			//r.enabled = false;
+		}
+
+		MeshRenderer[] meshedModel = GetComponentsInChildren<MeshRenderer> ();
+		foreach (MeshRenderer r in meshedModel) {
+			//r.enabled = false;
+		}
 		playerCamera.enabled = true;
 		GetComponent<AudioListener> ().enabled = true;
+		initialCameraHeight = playerCamera.transform.position.y - transform.position.y;
 	}
 
 	// Update is called once per frame
@@ -46,7 +57,7 @@ public class BallPlayer : NetworkBehaviour {
 				//bob camera
 				playerCamera.transform.position = 
 					new Vector3 (transform.position.x, 
-						transform.position.y + bobHeight * Mathf.Sin (((footstepCooldown - footstepTimer) / footstepCooldown) * Mathf.PI), 
+						transform.position.y + initialCameraHeight + bobHeight * Mathf.Sin (((footstepCooldown - footstepTimer) / footstepCooldown) * Mathf.PI), 
 						transform.position.z);
 			}
 		}

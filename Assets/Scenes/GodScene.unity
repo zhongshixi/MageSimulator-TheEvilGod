@@ -107,11 +107,57 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 548888516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.91, y: 6.2, z: -2.5658705}
+  m_LocalPosition: {x: 17.91, y: 7.9, z: -2.5658705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1001 &661439605
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 18.81752
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.0540195
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.8246307
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 492886, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &699380887
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +257,7 @@ MonoBehaviour:
   matchName: default
   matchSize: 4
   GodCharacter: {fileID: 192850, guid: e67eb90c7cd92764eaa33408f3175766, type: 2}
-  ManCharacter: {fileID: 154982, guid: cc8f00791926e53429264d75f4b44b98, type: 2}
+  ManCharacter: {fileID: 102018, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
 --- !u!4 &699380890
 Transform:
   m_ObjectHideFlags: 0
