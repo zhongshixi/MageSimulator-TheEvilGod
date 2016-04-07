@@ -30,6 +30,7 @@ public class GameTimer : NetworkBehaviour {
 			centerMessage.text = "Game Starts in " + (int)gameStartTimer; 
 			gameStartTimer -= Time.deltaTime;
 			if (gameStartTimer <= 0) {
+				UpdateMenCount ();
 				gameIsStarted = true;
 				centerMessage.text = ""; 
 				MultiplayerRoleStarter manager = GameObject.Find ("NetworkManager").GetComponent<MultiplayerRoleStarter> ();
@@ -47,8 +48,7 @@ public class GameTimer : NetworkBehaviour {
 			} else {
 				timerMessage.text = "Time Remaining: " + (((int)gameTimer)/60) + ":" + (((int)gameTimer)%60);
 			}
-			int livingRunners = GetLivingRunners ();
-			runnerCount.text = "Men Remaining: " + livingRunners;
+
 
 			gameTimer -= Time.deltaTime;
 			if (gameTimer <= 0) {
@@ -63,8 +63,9 @@ public class GameTimer : NetworkBehaviour {
 	}
 
 	public void EndGame(){
-		gameTimer = 0;
 		int livingRunners = GetLivingRunners ();
+		runnerCount.text = "Men Remaining: " + livingRunners;
+		gameTimer = 0;
 		if (livingRunners > 0) {
 			centerMessage.text = "Game Over: Man wins! (" + livingRunners + " men remain)";
 		} else {
@@ -86,5 +87,13 @@ public class GameTimer : NetworkBehaviour {
 
 	public bool IsGameStarted(){
 		return gameIsStarted;
+	}
+
+	public void UpdateMenCount(){
+		int livingRunners = GetLivingRunners ();
+		runnerCount.text = "Men Remaining: " + livingRunners;
+
+		if (livingRunners <= 0)
+			EndGame ();
 	}
 }

@@ -18,7 +18,7 @@ public class FireBallAttackScript : NetworkBehaviour {
 		GameObject hitObj = collision.collider.gameObject;
 		RunnerHealth runnerHealth = hitObj.GetComponent<RunnerHealth> ();
 		if (runnerHealth) {
-			runnerHealth.ApplyDamage (100);
+			runnerHealth.CmdApplyDamage (100);
 		}
 	}
 }
