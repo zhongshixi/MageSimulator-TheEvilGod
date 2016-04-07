@@ -8,7 +8,8 @@ public class GodScript : NetworkBehaviour {
 	void Start () {
 		if (!isLocalPlayer)
 			return;
-		
+
+
 		UnityEngine.UI.Text helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
 		helpMessage.text = "Objective: Destroy all men on the ground below before time runs out";
 		GetComponent<AudioListener> ().enabled = true;

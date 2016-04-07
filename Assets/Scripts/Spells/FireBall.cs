@@ -109,18 +109,14 @@ public class FireBall : SpellBase {
 
 	}
 
-	 protected void Update () {
-		base.Update ();
+	 protected void FixedUpdate () {
+		base.FixedUpdate ();
 
 		if (IsReleased) {
 			Grow (Time.deltaTime);
-
 		}
 	}
 		
-	protected void FixedUpdate(){
-		syncDirection = transform.forward;
-	}
 
 	void LateUpdate ()
 	{	
