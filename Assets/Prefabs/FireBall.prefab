@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11402230}
   - 114: {fileID: 11454496}
   - 114: {fileID: 11472422}
+  - 114: {fileID: 11496490}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -176,7 +177,7 @@ MonoBehaviour:
   maxChargeTimeInSeconds: 3
   Speed: 175
   scaleGrowRate: {x: 50, y: 50, z: 50}
-  maxScale: {x: 300, y: 300, z: 300}
+  maxScale: {x: 400, y: 400, z: 400}
   Noise: {x: 0, y: 0, z: 0}
   Damping: 0.1
 --- !u!114 &11472422
@@ -192,6 +193,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landMark: {fileID: 0}
   numberOfLineSegment: 100
+--- !u!114 &11496490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d0eb6402e8baf4da54592ea04fd041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13550432
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -4721,19 +4733,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 200
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.y
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.z
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.x
