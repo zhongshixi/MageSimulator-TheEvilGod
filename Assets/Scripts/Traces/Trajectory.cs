@@ -16,15 +16,15 @@ public class Trajectory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-			lineRenderer = gameObject.AddComponent<LineRenderer> ();
-			lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-			lineRenderer.SetWidth (0.01f, 0.1f);
-			lineRenderer.SetColors (Color.red, Color.red);
-			lineRenderer.useWorldSpace = true;
-			lineRenderer.SetVertexCount (numberOfLineSegment);
 
-	
+		lineRenderer = gameObject.AddComponent<LineRenderer> ();
+		lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+		lineRenderer.SetWidth (0.01f, 0.1f);
+		lineRenderer.SetColors (Color.red, Color.red);
+		lineRenderer.useWorldSpace = true;
+		lineRenderer.SetVertexCount (numberOfLineSegment);
+
+
 	}
 
 	void DrawLine(float distance){
@@ -41,23 +41,29 @@ public class Trajectory : MonoBehaviour {
 		}
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-		lineRenderer.SetVertexCount (0);
+	void FixedUpdate(){
+
+		//lineRenderer.SetVertexCount (0);
 		RaycastHit hit;
 
 		if (Physics.Raycast (transform.position, transform.forward, out hit)) {
 
-			Debug.Log ("hit");
+			//Debug.Log ("hit");
 			DrawLine (hit.distance);
 
 		} else {
 
-			DrawLine (100.0f);
+			DrawLine (200.0f);
 		}
 
-	
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+
+
 	}
 }
