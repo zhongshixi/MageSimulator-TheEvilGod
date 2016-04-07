@@ -170,7 +170,7 @@ MonoBehaviour:
   m_OfflineScene: GodScene
   m_OnlineScene: GodScene
   m_SpawnPrefabs:
-  - {fileID: 163338, guid: 8e9af3b47679745a0a90008c80d36e64, type: 2}
+  - {fileID: 0}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -212,6 +212,7 @@ MonoBehaviour:
   matchSize: 4
   GodCharacter: {fileID: 192850, guid: e67eb90c7cd92764eaa33408f3175766, type: 2}
   ManCharacter: {fileID: 102018, guid: a45fa906c0abdd74487bd9f03c9cf241, type: 2}
+  Indicator: {fileID: 143060, guid: d648915fd768b425e8191e1e4596eb48, type: 2}
 --- !u!4 &699380890
 Transform:
   m_ObjectHideFlags: 0
