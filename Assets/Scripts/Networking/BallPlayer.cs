@@ -146,9 +146,9 @@ public class BallPlayer : NetworkBehaviour {
 		}
 	}
 
-	void OnDestroy(){
-		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
-		if(gameTimer)
-			gameTimer.UpdateMenCount ();
-	}
+//	void OnDestroy(){
+//		/GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+//		if(gameTimer)
+//			gameTimer.UpdateMenCount ();
+//	}
 }

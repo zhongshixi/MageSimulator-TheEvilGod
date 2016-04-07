@@ -730,6 +730,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1191,7 +1192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a73a948cad64743bb21749f25118a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalSecondsPerPlayer: 60
+  AdditionalSecondsPerPlayer: 20
   timerMessage: {fileID: 150360374}
   centerMessage: {fileID: 457424206}
   runnerCount: {fileID: 2017329141}
