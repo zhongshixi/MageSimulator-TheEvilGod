@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11453956}
   - 114: {fileID: 11447418}
   m_Layer: 0
-  m_Name: FireBall 1
+  m_Name: FireBall with Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18b39e07282d410a9f1a2e999922520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticSoundPrefab: {fileID: 0}
+  releasingSoundPrefab: {fileID: 0}
   maxChargeTimeInSeconds: 3
+  spawnOnHit: {fileID: 0}
   Speed: 175
   scaleGrowRate: {x: 50, y: 50, z: 50}
   maxScale: {x: 300, y: 300, z: 300}

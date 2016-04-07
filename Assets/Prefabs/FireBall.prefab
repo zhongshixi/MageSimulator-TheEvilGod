@@ -126,7 +126,7 @@ MonoBehaviour:
   m_SendInterval: 0
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
-  m_SyncSpin: 0
+  m_SyncSpin: 1
   m_MovementTheshold: 0.001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
@@ -174,11 +174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18b39e07282d410a9f1a2e999922520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staticSoundPrefab: {fileID: 0}
-  releasingSoundPrefab: {fileID: 0}
+  staticSoundPrefab: {fileID: 8203048, guid: fdf940dd1d9124b2fbefee62516a36e4, type: 2}
+  releasingSoundPrefab: {fileID: 8295850, guid: deceefb18c0064ffcbc518a69b828121,
+    type: 2}
   maxChargeTimeInSeconds: 3
-  spawnOnHit: {fileID: 0}
-  Speed: 25
+  spawnOnHit: {fileID: 163954, guid: e993b8404beb54a2296382d396509ee9, type: 2}
+  Speed: 100
   scaleGrowRate: {x: 5, y: 5, z: 5}
   maxScale: {x: 400, y: 400, z: 400}
   Noise: {x: 0, y: 0, z: 0}
