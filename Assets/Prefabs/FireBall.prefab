@@ -11,7 +11,7 @@ GameObject:
   - 20: {fileID: 2009634}
   - 124: {fileID: 12475282}
   - 92: {fileID: 9279492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
