@@ -26,7 +26,7 @@ public class MultiplayerRoleStarter : NetworkManager {
 
 		ipMessage = GameObject.Find ("ipText").GetComponent<UnityEngine.UI.Text> ();
 		helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
-		if (numPlayers == 0) {
+		if (false && numPlayers == 0) {
 			//assign God Character
 			GameObject godStart = GameObject.Find("GodStart");
 			Vector3 godStartPos = godStart.transform.position;

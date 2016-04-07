@@ -4,8 +4,6 @@ using System.Collections;
 
 public class StartupGUI : MonoBehaviour {
 	private string address = "localhost";
-	private bool menuGUI = true;
-	private bool gameGUI = false;
 	private NetworkManager manager;
 	// Use this for initialization
 
@@ -14,10 +12,10 @@ public class StartupGUI : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		if (menuGUI)
-			MenuGUI ();
-		else if (gameGUI)
+		if (NetworkServer.active || NetworkClient.active)
 			GameGUI ();
+		else 
+			MenuGUI ();
 	}
 
 	void MenuGUI(){
@@ -48,32 +46,25 @@ public class StartupGUI : MonoBehaviour {
 	}
 
 	void GameGUI(){
-		if (NetworkServer.active || NetworkClient.active) {
-			if (GUI.Button (new Rect (Screen.width * 0.10f - 100 / 2, Screen.height * 0.10f - 25 / 2, 100, 25), "Exit Game"))
-				ExitGame ();
-		}
+		if (GUI.Button (new Rect (Screen.width * 0.10f - 100 / 2, Screen.height * 0.10f - 25 / 2, 100, 25), "Exit Game"))
+			ExitGame ();
+	
 	}
 
 
 	public void OnStartupHost(){
 		manager.networkPort = 7777;
 		manager.StartHost ();
-		menuGUI = false;
-		gameGUI = true;
 	}
 
 	public void OnJoinWorld(){
 		manager.networkAddress = address;
 		manager.networkPort = 7777;
 		manager.StartClient ();
-		menuGUI = false;
-		gameGUI = true;
 	}
 
 	public void ExitGame(){
 		manager.StopHost ();
-		menuGUI = true;
-		gameGUI = false;
 	}
 
 
