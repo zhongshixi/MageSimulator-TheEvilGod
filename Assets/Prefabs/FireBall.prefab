@@ -251,8 +251,8 @@ MonoBehaviour:
     type: 2}
   maxChargeTimeInSeconds: 3
   spawnOnHit: {fileID: 163954, guid: e993b8404beb54a2296382d396509ee9, type: 2}
-  Speed: 100
-  scaleGrowRate: {x: 5, y: 5, z: 5}
+  Speed: 85
+  scaleGrowRate: {x: 20, y: 20, z: 20}
   maxScale: {x: 400, y: 400, z: 400}
   Noise: {x: 0, y: 0, z: 0}
   Damping: 0.1
@@ -4816,7 +4816,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 25
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.x
@@ -4832,15 +4832,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.x
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.y
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.z
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
