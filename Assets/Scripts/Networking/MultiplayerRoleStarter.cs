@@ -12,6 +12,7 @@ public class MultiplayerRoleStarter : NetworkManager {
 	private UnityEngine.UI.Text ipMessage;
 	private UnityEngine.UI.Text helpMessage;
 
+
 	// Use this for initialization
 	void Start() {
 		ClientScene.RegisterPrefab (GodCharacter);

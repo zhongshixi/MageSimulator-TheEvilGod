@@ -75,7 +75,8 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 
 	protected void SpawnOnHit(GameObject obj, Vector3 position){
 
-		GameObject.Instantiate (obj, position, Quaternion.identity);
+		GameObject g = GameObject.Instantiate (obj, position, Quaternion.identity) as GameObject;
+		g.transform.localScale = transform.localScale / 10.0f;
 
 	}
 
@@ -84,8 +85,7 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 
 		if (spawnOnHit)
 			SpawnOnHit (spawnOnHit, collision.contacts [0].point);
-
-
+		
 
 	}
 
