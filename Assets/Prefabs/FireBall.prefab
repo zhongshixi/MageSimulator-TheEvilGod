@@ -17,25 +17,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &133272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 461818}
-  - 20: {fileID: 2081288}
-  - 124: {fileID: 12428070}
-  - 92: {fileID: 9220106}
-  - 81: {fileID: 8177802}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &163338
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,7 +33,7 @@ GameObject:
   - 114: {fileID: 11402230}
   - 114: {fileID: 11454496}
   - 114: {fileID: 11472422}
-  - 114: {fileID: 11450412}
+  - 114: {fileID: 11496490}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -101,18 +82,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 476708}
   m_RootOrder: 0
---- !u!4 &461818
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133272}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 476708}
-  m_RootOrder: 2
 --- !u!4 &476708
 Transform:
   m_ObjectHideFlags: 1
@@ -120,48 +89,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 129.8, y: 95.6, z: 123.8}
+  m_LocalPosition: {x: 3.78, y: 4.26, z: 9.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441052}
   - {fileID: 404294}
-  - {fileID: 461818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!20 &2081288
-Camera:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133272}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0.7
-    y: 0
-    width: 0.3
-    height: 0.3
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 21.9
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!54 &5426508
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -177,20 +111,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &8177802
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133272}
-  m_Enabled: 1
---- !u!92 &9220106
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133272}
-  m_Enabled: 1
 --- !u!114 &11402230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,18 +131,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &11450412
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6698ae4a692f543578059fc23e9f4d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trajectoryCamera: {fileID: 2081288}
 --- !u!114 &11454496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,7 +181,7 @@ MonoBehaviour:
   spawnOnHit: {fileID: 0}
   Speed: 20
   scaleGrowRate: {x: 50, y: 50, z: 50}
-  maxScale: {x: 300, y: 300, z: 300}
+  maxScale: {x: 400, y: 400, z: 400}
   Noise: {x: 0, y: 0, z: 0}
   Damping: 0.1
 --- !u!114 &11472422
@@ -289,13 +197,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landMark: {fileID: 0}
   numberOfLineSegment: 100
---- !u!124 &12428070
-Behaviour:
+--- !u!114 &11496490
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133272}
+  m_GameObject: {fileID: 163338}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d0eb6402e8baf4da54592ea04fd041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13550432
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -4825,19 +4737,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 200
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.x
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.y
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.z
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.x

@@ -45,6 +45,9 @@ public class BallPlayer : NetworkBehaviour {
 		playerCamera.enabled = true;
 		GetComponent<AudioListener> ().enabled = true;
 		initialCameraHeight = playerCamera.transform.position.y - transform.position.y;
+
+		UnityEngine.UI.Text helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
+		helpMessage.text = "Objective: Avoid fireballs to stay alive until time runs out";
 	}
 
 	// Update is called once per frame
