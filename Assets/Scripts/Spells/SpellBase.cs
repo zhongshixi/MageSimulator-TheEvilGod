@@ -46,17 +46,27 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 
 	}
 
-	protected void Update () {
 
-		transform.localScale = syncScale;
+	protected void FixedUpdate () {
+		Debug.Log ("isReleased: " + IsReleased); 
+
+			
+		//Debug.Log ("syncScale" + syncScale.x + ", " + syncScale.y + ", " + syncScale.z);
+		//transform.localScale = syncScale;
 		if (GetComponent<Rigidbody> ())
 			GetComponent<Rigidbody> ().velocity = syncVelocity;
 
 	}
 
+	[ClientCallback]
+	void Update(){
+		if (!NetworkServer.active)
+			transform.localScale = new Vector3 (50.0f,50.0f,50.0f);
+	}
+
 	[ClientRpc]
 	protected void RpcRelease(){
-
+		
 		if (releasingSoundPrefab) {
 			releasingSound = GameObject.Instantiate (releasingSoundPrefab, transform.position, transform.rotation) as AudioSource;
 			//releasingSound.transform.parent = gameObject.transform;
@@ -96,6 +106,41 @@ public class SpellBase : NetworkBehaviour, IGrowable {
 	}
 
 	virtual public Vector3 FinalScale(){
-		return this.transform.localScale;
+
+		RaycastHit hit;
+
+		if (Physics.Raycast (transform.position, transform.forward, out hit)) {
+
+			float distance = hit.distance;
+
+			float travelTime = distance / Speed;
+
+			Vector3 growth = scaleGrowRate * travelTime;
+
+			Vector3 finalScale = transform.localScale + growth;
+
+			float x, y, z = 0.0f;
+
+			if (finalScale.x >= maxScale.x)
+				x = maxScale.x;
+			else
+				x = finalScale.x;
+
+			if (finalScale.y >= maxScale.y)
+				y = maxScale.y;
+			else
+				y = finalScale.y;
+
+			if (finalScale.z >= maxScale.z)
+				z = maxScale.z;
+			else
+				z = finalScale.z;
+
+			return new Vector3 (x, y, z);
+
+		}
+
+		return transform.localScale;
+
 	}
 }

@@ -16,14 +16,17 @@ public class GameTimer : NetworkBehaviour {
 	public UnityEngine.UI.Text timerMessage;
 	public UnityEngine.UI.Text centerMessage;
 	public UnityEngine.UI.Text runnerCount;
+	private MultiplayerRoleStarter manager = null;
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(manager == null)
+			manager = GameObject.Find ("NetworkManager").GetComponent<MultiplayerRoleStarter> ();
 		
 		if (!gameIsStarted) {
 			timerMessage.text = "";
@@ -33,7 +36,6 @@ public class GameTimer : NetworkBehaviour {
 				UpdateMenCount ();
 				gameIsStarted = true;
 				centerMessage.text = ""; 
-				MultiplayerRoleStarter manager = GameObject.Find ("NetworkManager").GetComponent<MultiplayerRoleStarter> ();
 				manager.maxConnections = manager.numPlayers;
 				manager.SetHelpText("");
 				manager.SetIPText ("");
@@ -49,6 +51,9 @@ public class GameTimer : NetworkBehaviour {
 				timerMessage.text = "Time Remaining: " + (((int)gameTimer)/60) + ":" + (((int)gameTimer)%60);
 			}
 
+			centerMessage.text = "";
+			manager.SetHelpText("");
+			manager.SetIPText ("");
 
 			gameTimer -= Time.deltaTime;
 			if (gameTimer <= 0) {

@@ -144,7 +144,7 @@ GameObject:
   - 20: {fileID: 2057586}
   - 124: {fileID: 12476006}
   - 92: {fileID: 9244228}
-  - 81: {fileID: 8105362}
+  - 114: {fileID: 11486464}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2735,13 +2735,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!81 &8105362
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109606}
-  m_Enabled: 1
 --- !u!81 &8151960
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2944,6 +2937,35 @@ MonoBehaviour:
   jumpStrength: 500
   footstepCooldown: 0.35
   bobHeight: 0.15
+--- !u!114 &11486464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 0.05
+  aperture: 0.5
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: 0.5
+  dx11SpawnHeuristic: 0.0875
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.2
+  dx11BokehIntensity: 2.5
 --- !u!114 &11499984
 MonoBehaviour:
   m_ObjectHideFlags: 1
