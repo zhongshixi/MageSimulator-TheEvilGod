@@ -30,6 +30,11 @@ namespace UnityCustomAssets
 			if (!target)
 				return;
 
+			RunnerHealth targetHealth = target.GetComponent<RunnerHealth> ();
+			if (targetHealth.IsDead()) {
+				Destroy (gameObject);
+			}
+
 			// Calculate the current rotation angles
 			var wantedRotationAngle = target.eulerAngles.y;
 			var wantedHeight = target.position.y + height;

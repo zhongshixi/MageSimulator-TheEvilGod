@@ -9,15 +9,26 @@ public class MultiplayerRoleStarter : NetworkManager {
 	[SerializeField] GameObject ManCharacter;
 	[SerializeField] GameObject Indicator;
 
+	private UnityEngine.UI.Text ipMessage;
+	private UnityEngine.UI.Text helpMessage;
+
+
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		ClientScene.RegisterPrefab (GodCharacter);
 		ClientScene.RegisterPrefab (ManCharacter);
 		ClientScene.RegisterPrefab (Indicator);
 	}
 
 
+
+
 	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
+		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+
+
+		ipMessage = GameObject.Find ("ipText").GetComponent<UnityEngine.UI.Text> ();
+		helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
 		if (numPlayers == 0) {
 			//assign God Character
 			GameObject godStart = GameObject.Find("GodStart");
@@ -27,6 +38,8 @@ public class MultiplayerRoleStarter : NetworkManager {
 			player.transform.position = godStartPos;
 			player.transform.eulerAngles = godStartRot;
 			NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+			ipMessage.text = "Your IP Address: " + Network.player.ipAddress;
+
 		} else {
 			//assign Man Character
 			Vector3 manStartPos = GameObject.Find("ManStart").transform.position;
@@ -36,11 +49,31 @@ public class MultiplayerRoleStarter : NetworkManager {
 			indicator.transform.position = manStartPos;
 			indicator.GetComponent<CustomSmoothFollow> ().target = player.transform;
 			NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+
+			gameTimer.PlayerAdded ();
+			if (gameTimer.IsGameStarted ()) {
+				player.GetComponent<RunnerHealth> ().CmdApplyDamage (100);
+			}
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+	public void SetIPText(string text){
+		ipMessage = GameObject.Find ("ipText").GetComponent<UnityEngine.UI.Text> ();
+		ipMessage.text = text;
 	}
+
+	public void SetHelpText(string text){
+		helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
+		helpMessage.text = text;
+	}
+
+	public override void OnServerDisconnect(NetworkConnection conn){
+		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+		gameTimer.UpdateMenCount ();
+	}
+
+
+
+	
+
 }

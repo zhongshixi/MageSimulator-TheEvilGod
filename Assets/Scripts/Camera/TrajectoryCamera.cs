@@ -9,7 +9,8 @@ public class TrajectoryCamera : MonoBehaviour {
 	float mapSize = 180.0F;
 	// Use this for initialization
 	void Start () {
-	
+
+		GetComponent<AudioListener> ().enabled = false;
 	}
 	
 	// Update is called once per frame

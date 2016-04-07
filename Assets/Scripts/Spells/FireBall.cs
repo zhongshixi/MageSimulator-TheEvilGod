@@ -81,7 +81,6 @@ public class FireBall : SpellBase {
 			transform.localScale = new Vector3 (x, y, z);
 			syncScale = transform.localScale;
 
-			Debug.Log (transform.localScale);
 
 		}
 			
@@ -134,7 +133,7 @@ public class FireBall : SpellBase {
 
 	void OnCollisionEnter(Collision collision){
 
-		//Debug.Log ("Destroyed");
+		base.OnCollisionEnter (collision);
 		Destroy (gameObject);
 	
 	}
