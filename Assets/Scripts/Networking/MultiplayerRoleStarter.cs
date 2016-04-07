@@ -28,7 +28,7 @@ public class MultiplayerRoleStarter : NetworkManager {
 
 		ipMessage = GameObject.Find ("ipText").GetComponent<UnityEngine.UI.Text> ();
 		helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
-		if (false && numPlayers == 0) {
+		if (numPlayers == 0) {
 			//assign God Character
 			GameObject godStart = GameObject.Find("GodStart");
 			Vector3 godStartPos = godStart.transform.position;
@@ -51,7 +51,7 @@ public class MultiplayerRoleStarter : NetworkManager {
 
 			gameTimer.PlayerAdded ();
 			if (gameTimer.IsGameStarted ()) {
-				player.GetComponent<RunnerHealth> ().ApplyDamage (100);
+				player.GetComponent<RunnerHealth> ().CmdApplyDamage (100);
 			}
 		}
 	}
@@ -64,6 +64,11 @@ public class MultiplayerRoleStarter : NetworkManager {
 	public void SetHelpText(string text){
 		helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
 		helpMessage.text = text;
+	}
+
+	public override void OnServerDisconnect(NetworkConnection conn){
+		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+		gameTimer.UpdateMenCount ();
 	}
 
 

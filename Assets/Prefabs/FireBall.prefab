@@ -178,8 +178,8 @@ MonoBehaviour:
   releasingSoundPrefab: {fileID: 0}
   maxChargeTimeInSeconds: 3
   spawnOnHit: {fileID: 0}
-  Speed: 175
-  scaleGrowRate: {x: 50, y: 50, z: 50}
+  Speed: 25
+  scaleGrowRate: {x: 5, y: 5, z: 5}
   maxScale: {x: 400, y: 400, z: 400}
   Noise: {x: 0, y: 0, z: 0}
   Damping: 0.1
@@ -4736,7 +4736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 175
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.x
@@ -4752,15 +4752,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.x
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.y
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.z
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
