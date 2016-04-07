@@ -266,8 +266,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18b39e07282d410a9f1a2e999922520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staticSoundPrefab: {fileID: 8203048, guid: fdf940dd1d9124b2fbefee62516a36e4, type: 2}
+  releasingSoundPrefab: {fileID: 8295850, guid: deceefb18c0064ffcbc518a69b828121,
+    type: 2}
   maxChargeTimeInSeconds: 3
-  Speed: 175
+  spawnOnHit: {fileID: 0}
+  Speed: 20
   scaleGrowRate: {x: 50, y: 50, z: 50}
   maxScale: {x: 300, y: 300, z: 300}
   Noise: {x: 0, y: 0, z: 0}

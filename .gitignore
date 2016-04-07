@@ -65,6 +65,8 @@ Assets/LeapMotion+OVR.*
 Assets/Gizmos.meta
 Assets/FPL_ISBIT
 
+Assets/PyroParticles
+
 Plugins/Android
 Plugins/LeapCSharp.bundle
 Plugins/OculusPlugin.bundle
