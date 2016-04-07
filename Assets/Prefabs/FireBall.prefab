@@ -34,7 +34,10 @@ GameObject:
   - 114: {fileID: 11454496}
   - 114: {fileID: 11472422}
   - 114: {fileID: 11496490}
+<<<<<<< HEAD
   - 108: {fileID: 10818474}
+=======
+>>>>>>> master
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -112,6 +115,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD
 --- !u!108 &10818474
 Light:
   m_ObjectHideFlags: 1
@@ -145,6 +149,8 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+=======
+>>>>>>> master
 --- !u!114 &11402230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18b39e07282d410a9f1a2e999922520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   staticSoundPrefab: {fileID: 8203048, guid: fdf940dd1d9124b2fbefee62516a36e4, type: 2}
   releasingSoundPrefab: {fileID: 8295850, guid: deceefb18c0064ffcbc518a69b828121,
     type: 2}
@@ -216,6 +223,15 @@ MonoBehaviour:
   Speed: 30
   scaleGrowRate: {x: 10, y: 10, z: 10}
   maxScale: {x: 200, y: 200, z: 200}
+=======
+  staticSoundPrefab: {fileID: 0}
+  releasingSoundPrefab: {fileID: 0}
+  maxChargeTimeInSeconds: 3
+  spawnOnHit: {fileID: 0}
+  Speed: 25
+  scaleGrowRate: {x: 5, y: 5, z: 5}
+  maxScale: {x: 400, y: 400, z: 400}
+>>>>>>> master
   Noise: {x: 0, y: 0, z: 0}
   Damping: 0.1
 --- !u!114 &11472422
@@ -343,7 +359,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 0.01
+      scalar: 0.011
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4771,7 +4787,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
+<<<<<<< HEAD
       value: 175
+=======
+      value: 25
+>>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxScale.x
@@ -4787,15 +4807,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.x
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.y
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scaleGrowRate.z
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

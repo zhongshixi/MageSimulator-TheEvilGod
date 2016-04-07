@@ -4,8 +4,11 @@ using System.Collections;
 
 public class StartupGUI : MonoBehaviour {
 	private string address = "localhost";
+<<<<<<< HEAD
 	private bool menuGUI = true;
 	private bool gameGUI = false;
+=======
+>>>>>>> master
 	private NetworkManager manager;
 	// Use this for initialization
 
@@ -14,10 +17,17 @@ public class StartupGUI : MonoBehaviour {
 	}
 
 	void OnGUI () {
+<<<<<<< HEAD
 		if (menuGUI)
 			MenuGUI ();
 		else if (gameGUI)
 			GameGUI ();
+=======
+		if (NetworkServer.active || NetworkClient.active)
+			GameGUI ();
+		else 
+			MenuGUI ();
+>>>>>>> master
 	}
 
 	void MenuGUI(){
@@ -48,32 +58,47 @@ public class StartupGUI : MonoBehaviour {
 	}
 
 	void GameGUI(){
+<<<<<<< HEAD
 		if (NetworkServer.active || NetworkClient.active) {
 			if (GUI.Button (new Rect (Screen.width * 0.10f - 100 / 2, Screen.height * 0.10f - 25 / 2, 100, 25), "Exit Game"))
 				ExitGame ();
 		}
+=======
+		if (GUI.Button (new Rect (Screen.width * 0.10f - 100 / 2, Screen.height * 0.10f - 25 / 2, 100, 25), "Exit Game"))
+			ExitGame ();
+	
+>>>>>>> master
 	}
 
 
 	public void OnStartupHost(){
 		manager.networkPort = 7777;
 		manager.StartHost ();
+<<<<<<< HEAD
 		menuGUI = false;
 		gameGUI = true;
+=======
+>>>>>>> master
 	}
 
 	public void OnJoinWorld(){
 		manager.networkAddress = address;
 		manager.networkPort = 7777;
 		manager.StartClient ();
+<<<<<<< HEAD
 		menuGUI = false;
 		gameGUI = true;
+=======
+>>>>>>> master
 	}
 
 	public void ExitGame(){
 		manager.StopHost ();
+<<<<<<< HEAD
 		menuGUI = true;
 		gameGUI = false;
+=======
+>>>>>>> master
 	}
 
 

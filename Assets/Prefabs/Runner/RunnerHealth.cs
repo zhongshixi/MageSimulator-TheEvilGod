@@ -21,13 +21,22 @@ public class RunnerHealth : NetworkBehaviour {
 		
 	}
 
+<<<<<<< HEAD
 	public void ApplyDamage(int damage){
+=======
+	[Command]
+	public void CmdApplyDamage(int damage){
+>>>>>>> master
 		health -= damage;
 		if (health <= 0)
 			Death ();
 	}
 
 	public void Death(){
+<<<<<<< HEAD
+=======
+		isDead = true;
+>>>>>>> master
 		GetComponent<CapsuleCollider> ().enabled = false;
 		GetComponent<Rigidbody> ().useGravity = false;
 		GameObject messageObj = GameObject.Find ("RunnerText");
@@ -40,10 +49,20 @@ public class RunnerHealth : NetworkBehaviour {
 		foreach (MeshRenderer r in meshedModel) {
 			r.enabled = false;
 		}
+<<<<<<< HEAD
 		if (isLocalPlayer) {
 			UnityEngine.UI.Text message = messageObj.GetComponent<UnityEngine.UI.Text> ();
 			message.text = "You are dead.";
 			isDead = true;
+=======
+
+		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+		gameTimer.UpdateMenCount ();
+
+		if (isLocalPlayer) {
+			UnityEngine.UI.Text message = messageObj.GetComponent<UnityEngine.UI.Text> ();
+			message.text = "You are dead.";
+>>>>>>> master
 		}
 	}
 

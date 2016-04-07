@@ -11,6 +11,12 @@ public class GodScript : NetworkBehaviour {
 		
 		UnityEngine.UI.Text helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
 		helpMessage.text = "Objective: Destroy all men on the ground below before time runs out";
+<<<<<<< HEAD
+=======
+		GetComponent<AudioListener> ().enabled = false;
+
+
+>>>>>>> master
 	}
 	
 	// Update is called once per frame

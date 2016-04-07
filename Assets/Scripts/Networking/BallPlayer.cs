@@ -48,6 +48,12 @@ public class BallPlayer : NetworkBehaviour {
 
 		UnityEngine.UI.Text helpMessage = GameObject.Find ("helpText").GetComponent<UnityEngine.UI.Text> ();
 		helpMessage.text = "Objective: Avoid fireballs to stay alive until time runs out";
+<<<<<<< HEAD
+=======
+
+		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+		gameTimer.UpdateMenCount ();
+>>>>>>> master
 	}
 
 	// Update is called once per frame
@@ -141,5 +147,11 @@ public class BallPlayer : NetworkBehaviour {
 			}
 			break;
 		}
+	}
+
+	void OnDestroy(){
+		GameTimer gameTimer = GameObject.Find ("GameTimer").GetComponent<GameTimer> ();
+		if(gameTimer)
+			gameTimer.UpdateMenCount ();
 	}
 }
