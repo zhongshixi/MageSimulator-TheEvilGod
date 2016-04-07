@@ -463,7 +463,7 @@ MonoBehaviour:
   m_OfflineScene: GodScene
   m_OnlineScene: GodScene
   m_SpawnPrefabs:
-  - {fileID: 0}
+  - {fileID: 163338, guid: 8e9af3b47679745a0a90008c80d36e64, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -730,7 +730,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
