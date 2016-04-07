@@ -63,9 +63,9 @@ public class GameTimer : NetworkBehaviour {
 	}
 
 	public void EndGame(){
-		UpdateMenCount ();
-		gameTimer = 0;
 		int livingRunners = GetLivingRunners ();
+		runnerCount.text = "Men Remaining: " + livingRunners;
+		gameTimer = 0;
 		if (livingRunners > 0) {
 			centerMessage.text = "Game Over: Man wins! (" + livingRunners + " men remain)";
 		} else {
