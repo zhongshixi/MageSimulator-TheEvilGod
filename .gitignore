@@ -65,6 +65,8 @@ Assets/LeapMotion+OVR.*
 Assets/Gizmos.meta
 Assets/FPL_ISBIT
 
+Assets/PyroParticles
+
 Plugins/Android
 Plugins/LeapCSharp.bundle
 Plugins/OculusPlugin.bundle
@@ -76,3 +78,5 @@ Plugins/OculusPlugin.bundle
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+
+Assets/PyroParticles.meta
